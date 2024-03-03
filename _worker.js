@@ -1,39 +1,39 @@
 // <!--GAMFC-->version base on commit 43fad05dcdae3b723c53c226f8181fc5bd47223e, time is 2023-06-22 15:20:05 UTC<!--GAMFC-END-->.
 // @ts-ignore
-import { connect } from 'cloudflare:sockets';
+ 重要性    {    连接      }      来自       '云斑:插座' ;
 
-// How to generate your own UUID:
-// [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
-let userID = '90cd4a77-141a-43c9-991b-08263cfe9c10';
+//如何生成自己的UUID:
+// [Windows] Press "Win + R", input cmd and run: Powershell -NoExit -Command "[guid]::NewGuid()"
+ 出租      用户集 = '90cd4a77-141a-43c9-991b-08263cfe9c10' ;
 
-let proxyIP = '';// 小白勿动，该地址并不影响你的网速，这是给CF代理使用的。'cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org'
+ 出租     Proxyip = '' ; // 小白勿动，该地址并不影响你的网速，这是给CF代理使用的。'cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org'
 
 //let sub = '';// 留空则显示原版内容
-let sub = 'sub.cmliussss.workers.dev';// 内置优选订阅生成器，可自行搭建 https://github.com/cmliu/WorkerVless2sub
-let subconverter = 'api.v1.mk';// clash订阅转换后端，目前使用肥羊的订阅转换功能。支持自建psub 可自行搭建https://github.com/bulianglin/psub
-let subconfig = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"; //订阅配置文件
-// The user name and password do not contain special characters
-// Setting the address will ignore proxyIP
-// Example:  user:pass@host:port  or  host:port
-let socks5Address = '';
-let RproxyIP = 'false';
-if (!isValidUUID(userID)) {
-	throw new Error('uuid is not valid');
+ 出租   潜艇 = '3K.fxxk.dedyn.io' ; // 内置优选订阅生成器，可自行搭建https://github.com/cmliu/WorkerVless2sub
+ 出租      次变换器 = 'api.v1.mk' ; // clash订阅转换后端，目前使用肥羊的订阅转换功能。支持自建psub 可自行搭建https://github.com/bulianglin/psub
+ 出租     副配置 = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini" ; //订阅配置文件
+//用户名及密码不包括特殊字符
+//设定地址将忽略Proxyip
+//示例:用户:通过@主机:端口或主机:端口
+ 出租    索克斯5地址 = '' ;
+ 出租   R31-yip = 'false' ;
+     如果        ( ! 伊斯瓦利杜伊德        ( 用户集 )         )           {
+	 投掷        新的 错误      (             "UUID无效"            ) ;
 }
 
-let parsedSocks5Address = {}; 
-let enableSocks = false;
+ 出租       地址 = {          } ;
+出租     使能 = 假的 ;
 
-export default {
+ 出口    违约        {
 	/**
 	 * @param {import("@cloudflare/workers-types").Request} request
 	 * @param {{UUID: string, PROXYIP: string}} env
 	 * @param {import("@cloudflare/workers-types").ExecutionContext} ctx
 	 * @returns {Promise<Response>}
 	 */
-	async fetch(request, env, ctx) {
-		try {
-			const userAgent = request.headers.get('User-Agent').toLowerCase();
+	 同步的       抓住     (  请求 , 环境 , Ctx    )    {
+		 尝试   {
+			 康斯特   用户代理人 = request. 头 . 获得  (  'User-Agent'  ) . 磁带盒  (  ) ;
 			userID = env.UUID || userID;
 			proxyIP = env.PROXYIP || proxyIP;
 			socks5Address = env.SOCKS5 || socks5Address;
