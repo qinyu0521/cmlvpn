@@ -9,7 +9,7 @@
  出租     Proxyip = '' ; // 小白勿动，该地址并不影响你的网速，这是给CF代理使用的。'cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org'
 
 //let sub = '';// 留空则显示原版内容
- 出租   潜艇 = '3K.fxxk.dedyn.io' ; // 内置优选订阅生成器，可自行搭建https://github.com/cmliu/WorkerVless2sub
+ 出租   潜艇 = 'sub.kaiche.tk' ; // 内置优选订阅生成器，可自行搭建https://github.com/cmliu/WorkerVless2sub
  出租      次变换器 = 'api.v1.mk' ; // clash订阅转换后端，目前使用肥羊的订阅转换功能。支持自建psub 可自行搭建https://github.com/bulianglin/psub
  出租     副配置 = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini" ; //订阅配置文件
 //用户名及密码不包括特殊字符
